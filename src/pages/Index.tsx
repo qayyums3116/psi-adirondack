@@ -1,14 +1,18 @@
 
+
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
+import AIEvolutionSection from "@/components/AIEvolutionSection";
 import PhasesSection from "@/components/PhasesSection";
 import ValuePropositionSection from "@/components/ValuePropositionSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import SmartApproachSection from "@/components/SmartApproachSection";
 import TargetAudienceSection from "@/components/TargetAudienceSection";
 import PricingSection from "@/components/PricingSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import FinalCTASection from "@/components/FinalCTASection";
-import Footer from "@/components/Footer";
+import AISeedingStrategySection from "@/components/AISeedingStrategySection";
 
 const Index = () => {
   return (
@@ -42,10 +46,17 @@ const Index = () => {
           <div id="home">
             <HeroSection />
           </div>
+          <AIEvolutionSection />
+          <div id="ai-seeding-strategy">
+            <AISeedingStrategySection />
+          </div>
           <div id="about">
             <PhasesSection />
             <ValuePropositionSection />
-            <HowItWorksSection />
+            <div id="how-it-works">
+              <HowItWorksSection />
+            </div>
+            <SmartApproachSection />
             <TargetAudienceSection />
           </div>
           <div id="pricing">

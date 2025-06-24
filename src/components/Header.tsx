@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -8,23 +9,35 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", href: "#home" },
+    { name: "Solutions", href: "#ai-seeding-strategy" },
     { name: "About", href: "#about" },
+    { name: "How It Works", href: "#how-it-works" },
     { name: "Pricing", href: "#pricing" },
     { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact ", href: "#demo-section" }
+    { name: "Contact", href: "#demo-section" }
   ];
 
   // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.href.substring(1));
-      const scrollPosition = window.scrollY + 100;
+      const sections = [
+        "home",
+        "ai-seeding-strategy", 
+        "about",
+        "how-it-works",
+        "pricing", 
+        "testimonials",
+        "demo-section"
+      ];
+      const scrollPosition = window.scrollY + 150;
 
-      for (const section of sections) {
+      // Check sections in reverse order to prioritize lower sections
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          const { offsetTop } = element;
+          if (scrollPosition >= offsetTop) {
             setActiveSection(section);
             break;
           }
@@ -33,6 +46,7 @@ const Header = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once to set initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -45,7 +59,6 @@ const Header = () => {
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
     const sectionId = href.substring(1);
-    setActiveSection(sectionId);
     // Smooth scroll to section
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -55,12 +68,12 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-psi-dark/95 backdrop-blur-sm border-b border-gray-800">
       <nav className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo with Greek Psi Symbol */}
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-psi-green to-psi-purple rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-sm">P</span>
+              <span className="text-black font-bold text-lg">Ψ</span>
             </div>
-            <span className="text-psi-text font-bold text-xl">PsiAdirondack</span>
+            <span className="text-psi-text font-bold text-xl">ΨAdirondack</span>
           </div>
 
           {/* Desktop Navigation */}

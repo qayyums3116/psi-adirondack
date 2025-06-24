@@ -8,12 +8,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-psi-green to-psi-purple rounded-lg flex items-center justify-center">
-                <span className="text-black font-bold text-sm">P</span>
-              </div>
-              <span className="text-psi-text font-bold text-lg">PsiAdirondack</span>
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-gradient-to-br from-psi-green to-psi-purple rounded-lg flex items-center justify-center">
+              <span className="text-black font-bold text-lg">Ψ</span>
             </div>
+            <span className="text-psi-text font-bold text-xl">ΨAdirondack</span>
+          </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Dominating generative search with AI-driven content seeding and automation.
             </p>
