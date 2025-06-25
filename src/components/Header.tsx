@@ -73,7 +73,7 @@ const Header = () => {
             <div className="w-8 h-8 bg-gradient-to-br from-psi-green to-psi-purple rounded-lg flex items-center justify-center">
               <span className="text-black font-bold text-lg">Ψ</span>
             </div>
-            <span className="text-psi-text font-bold text-xl">ΨAdirondack</span>
+            <span className="text-psi-text font-bold text-xl">PsiAdirondack</span>
           </div>
 
           {/* Desktop Navigation */}
