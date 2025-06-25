@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
@@ -87,26 +86,26 @@ const AISeedingStrategySection = () => {
   const IconComponent = currentPlatform.icon;
 
   return (
-    <section className="relative py-20 bg-psi-dark overflow-hidden">
+    <section className="relative py-12 md:py-20 bg-psi-dark overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-psi-green/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-psi-purple/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-4 md:left-10 w-32 md:w-64 h-32 md:h-64 bg-psi-green/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-4 md:right-10 w-40 md:w-80 h-40 md:h-80 bg-psi-purple/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-psi-text mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-psi-text mb-4 md:mb-6">
             AI Seeding Strategy
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
             Multi-platform visibility approach designed for the evolving AI landscape
           </p>
         </motion.div>
@@ -114,11 +113,11 @@ const AISeedingStrategySection = () => {
         {/* Slideshow Container */}
         <div className="relative">
           {/* Main Slide Display */}
-          <div className="relative h-96 md:h-[500px] overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/50">
+          <div className="relative h-[600px] sm:h-[500px] md:h-[500px] overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/50">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
-                className="absolute inset-0 flex items-center justify-center"
+                className="absolute inset-0 flex items-center justify-center p-4 md:p-8"
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
@@ -126,22 +125,22 @@ const AISeedingStrategySection = () => {
               >
                 <div className={`absolute inset-0 ${currentPlatform.bgColor} opacity-20`}></div>
                 
-                <div className="relative z-10 max-w-4xl mx-auto px-8 text-center">
+                <div className="relative z-10 max-w-4xl mx-auto text-center">
                   {/* Platform Icon */}
                   <motion.div
-                    className="mb-8 flex justify-center"
+                    className="mb-6 md:mb-8 flex justify-center"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
                   >
-                    <div className={`p-6 rounded-full bg-gradient-to-r ${currentPlatform.color} shadow-2xl`}>
-                      <IconComponent className="w-16 h-16 text-white" />
+                    <div className={`p-4 md:p-6 rounded-full bg-gradient-to-r ${currentPlatform.color} shadow-2xl`}>
+                      <IconComponent className="w-12 h-12 md:w-16 md:h-16 text-white" />
                     </div>
                   </motion.div>
 
                   {/* Platform Name */}
                   <motion.h3
-                    className="text-3xl md:text-4xl font-bold text-psi-text mb-4"
+                    className="text-2xl md:text-3xl lg:text-4xl font-bold text-psi-text mb-3 md:mb-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
@@ -151,7 +150,7 @@ const AISeedingStrategySection = () => {
 
                   {/* Platform Title */}
                   <motion.h4
-                    className="text-xl md:text-2xl font-semibold text-psi-green mb-6"
+                    className="text-lg md:text-xl lg:text-2xl font-semibold text-psi-green mb-4 md:mb-6"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
@@ -161,7 +160,7 @@ const AISeedingStrategySection = () => {
 
                   {/* Description */}
                   <motion.p
-                    className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto"
+                    className="text-base md:text-lg text-gray-300 mb-4 md:mb-6 max-w-2xl mx-auto leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.5 }}
@@ -171,7 +170,7 @@ const AISeedingStrategySection = () => {
 
                   {/* Strategy */}
                   <motion.p
-                    className="text-psi-purple font-medium mb-8 max-w-2xl mx-auto"
+                    className="text-sm md:text-base text-psi-purple font-medium mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
@@ -185,9 +184,9 @@ const AISeedingStrategySection = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.7, duration: 0.5 }}
                   >
-                    <Button className="bg-psi-green hover:bg-psi-green/80 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105">
+                    <Button className="bg-psi-green hover:bg-psi-green/80 text-black font-semibold px-4 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-lg transition-all duration-300 hover:scale-105">
                       Learn More
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                      <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                     </Button>
                   </motion.div>
                 </div>
@@ -198,29 +197,29 @@ const AISeedingStrategySection = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-gray-800/80 hover:bg-gray-700/80 text-psi-text rounded-full transition-all duration-300 hover:scale-110 z-10"
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-gray-800/80 hover:bg-gray-700/80 text-psi-text rounded-full transition-all duration-300 hover:scale-110 z-10"
             onMouseEnter={() => setIsPlaying(false)}
             onMouseLeave={() => setIsPlaying(true)}
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-gray-800/80 hover:bg-gray-700/80 text-psi-text rounded-full transition-all duration-300 hover:scale-110 z-10"
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 bg-gray-800/80 hover:bg-gray-700/80 text-psi-text rounded-full transition-all duration-300 hover:scale-110 z-10"
             onMouseEnter={() => setIsPlaying(false)}
             onMouseLeave={() => setIsPlaying(true)}
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
           {/* Dots Navigation */}
-          <div className="flex justify-center space-x-3 mt-8">
+          <div className="flex justify-center space-x-2 md:space-x-3 mt-6 md:mt-8">
             {platforms.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
                   index === currentSlide
                     ? 'bg-psi-green scale-125'
                     : 'bg-gray-600 hover:bg-gray-500'
@@ -234,21 +233,21 @@ const AISeedingStrategySection = () => {
 
         {/* Bottom CTA */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-12 md:mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold text-psi-text mb-4">
+          <h3 className="text-xl md:text-2xl font-bold text-psi-text mb-3 md:mb-4">
             Ready to Dominate AI Search?
           </h3>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-gray-300 mb-4 md:mb-6 max-w-2xl mx-auto leading-relaxed">
             Our platform adapts to every shift in the AI landscape, ensuring your visibility today and tomorrow.
           </p>
-          <Button className="bg-psi-purple hover:bg-psi-purple/80 text-white font-semibold px-8 py-4 text-lg rounded-lg transition-all duration-300 hover:scale-105">
+          <Button className="bg-psi-purple hover:bg-psi-purple/80 text-white font-semibold px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-lg transition-all duration-300 hover:scale-105">
             Get Started Now
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
           </Button>
         </motion.div>
       </div>
